@@ -1,7 +1,7 @@
 # Multi-Task Deep Learning System for Automated Waste Classification & Sorting
 
 > A data science senior thesis project by **Omar Moustafa**, **Malak Elsayed**, & **Nour Kahky**  
-> Department of Mathematics and Actuarial Science, The American University in Cairo  
+> Department of Mathematics and Actuarial Science, The American University in Cairo (AUC)
 > Supervised by **Dr. Noha Youssef** · In collaboration with **Nestlé** and **Dawar**
 
 ---
