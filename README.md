@@ -51,6 +51,8 @@ The pipeline processes each input image through four sequential stages, as illus
 
 ## Repository Structure
 
+The repository is organized into the following main directories and files:
+
 ```
 smartsort/
 │
@@ -239,12 +241,16 @@ The mapping from raw categories to pipeline classes is as follows:
   <em>Figure 2. Physical SmartSort prototype developed in collaboration with AUC's Eltoukhy Learning Factory and MakersGate.</em>
 </p>
 
-Beyond the software pipeline, this project was extended into a **real-world smart bin prototype** funded by Nestlé and Dawar, and fabricated by AUC's **Eltoukhy Learning Factory** and **MakersGate**. The prototype integrates:
+Beyond the software pipeline, this project was extended into a **real-world smart bin prototype** funded by Nestlé and Dawar, and fabricated by AUC's **Eltoukhy Learning Factory** and **MakersGate**.
 
-- Camera module for image capture
-- Embedded hardware running the deep learning pipeline
-- Motorized compartments driven by the decision codes (1–7)
-- Sensors for bin capacity and status monitoring
+The prototype integrates key hardware and software components to enable fully automated, real-time waste sorting:
+
+*   **Camera module** for image capture at the point of disposal.
+*   **Embedded hardware** running the deep learning pipeline for on-device inference.
+*   **Motorized compartments** driven by the sequential decision pipeline (Decision Codes 1–7).
+*   **A 2-DOF pan-tilt sorting mechanism** to physically route waste to its designated compartment.
+*   **Sensors** for bin capacity and status monitoring.
+
 
 ---
 
