@@ -250,7 +250,7 @@ Beyond the software pipeline, this project was extended into a **real-world smar
 
 ## Acknowledgements
 
-This project would not have been possible without the unwavering support of:
+This project would not have been possible without the guidance and unwavering support of:
 
 - **Dr. Noha Youssef** — Thesis advisor, Department of Mathematics and Actuarial Science, AUC
 - **Ms. Mahira Hassan** — Nestlé, for industry collaboration and funding
