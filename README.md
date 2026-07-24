@@ -206,7 +206,7 @@ Real-world validation data was provided by **Dawar**, an Egyptian waste manageme
 | Waste Material Classification | Kaggle | Material Classification | 4 (Paper, Plastic, Organic, Other) | 11,522 images |
 | Recyclability | GitHub | Recyclability Classification | 2 (Recyclable, Non-Recyclable) | 34,459 images |
 | Liquid Detection | Self-constructed | Liquid Detection | 2 (Liquid, Non-Liquid) | 1,056 images |
-| Multi-Component Detection | Self-constructed | Component Detection | 2 (Single, Multi-Component) | Self-constructed |
+| Multi-Component Detection | Self-constructed | Component Detection | 2 (Single, Multi-Component) | 1,380 images |
 | Dawar External Validation | Industry Partner | Full Pipeline Validation | 5 (Output Compartments) | Varies |
 
 The mapping from raw categories to pipeline classes is as follows:
