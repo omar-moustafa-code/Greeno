@@ -175,7 +175,7 @@ CATEGORY_MODEL_PATH  = 'xception_4classes.keras'
 
 ---
 
-## Dataset
+## Datasets
 
 No large-scale public dataset for multi-task waste classification existed at the time of this project. To address this, we utilized a combination of publicly available datasets, self-constructed datasets, and industry-provided external validation data. Each dataset was selected or created for a specific classification task within the pipeline, ensuring that the models were trained on data that reflects the complexities of real-world waste sorting.
 
