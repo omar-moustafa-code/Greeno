@@ -177,23 +177,46 @@ CATEGORY_MODEL_PATH  = 'xception_4classes.keras'
 
 ## Dataset
 
-No large-scale public dataset for multi-task waste classification existed at the time of this project. The team built a custom labeled dataset from scratch, covering the following waste categories:
+No large-scale public dataset for multi-task waste classification existed at the time of this project. To address this, we utilized a combination of publicly available datasets, self-constructed datasets, and industry-provided external validation data. Each dataset was selected or created for a specific classification task within the pipeline, ensuring that the models were trained on data that reflects the complexities of real-world waste sorting.
 
-`Automobile Wastes` · `Battery Waste` · `E-Waste` · `Glass Waste` · `Light Bulbs` · `Metal Waste` · `Paper Waste` · `Plastic Waste` · `Organic Waste`
+### Public Datasets
 
-These were mapped to the four output classes as follows:
+**Waste Material Classification Dataset**  
+Publicly available on Kaggle, this dataset contains 11,522 labeled RGB images spanning nine waste categories: E-waste, Automobile Waste, Battery Waste, Glass Waste, Light Bulbs, Metal Waste, Organic Waste, Paper Waste, and Plastic Waste. For this project, the nine categories were remapped into four classes—Paper, Plastic, Organic, and Other—to balance class frequencies and improve model generalization. The "Other" category consolidates less frequently encountered materials such as E-waste, automobile waste, battery waste, glass waste, and light bulbs. All images were resized to 224×224 pixels and stored in .jpg format.
+
+**Recyclable vs. Non-Recyclable Dataset**  
+Publicly available on GitHub, this dataset comprises 34,459 RGB images labeled as either Recyclable or Non-Recyclable. The images are organized into class-specific directories, enabling efficient data loading. All images were resized to 224×224×3 and stored in .jpg format. This dataset served as the foundation for training the DenseNet121 recyclability classifier.
+
+### Self-Constructed Datasets
+
+**Liquid Detection Dataset**  
+This dataset was manually constructed through controlled photography to capture the presence or absence of liquid in waste containers. It consists of 1,056 labeled RGB images across two classes: Liquid and Non-Liquid. Images were collected across a variety of container types and edge cases to reflect the diversity of inputs the prototype bin is expected to encounter.
+
+**Multi-Component Detection Dataset**  
+A second self-constructed dataset was created for the task of distinguishing single-component from multi-component waste items. This dataset was built to enable the model to identify items composed of two or more visually distinct components (e.g., a paper cup with a plastic lid), which would otherwise be misclassified by downstream material classifiers.
+
+### External Validation Dataset
+
+Real-world validation data was provided by **Dawar**, an Egyptian waste management company. This dataset contains images of waste collected from within the Egyptian community, enabling the evaluation of the full pipeline's performance on regionally representative, real-world inputs. For the single-object Arabic-labelled dataset, existing class labels were manually mapped to the four material categories. For the unlabeled mixed-waste dataset, object detection using YOLOv8 was employed to isolate individual items, and a labelling classifier (ResNet50, fine-tuned for recyclability) was used to generate labels. After augmentation to balance class distributions, the unified pipeline achieved **92.4% accuracy** on this external validation set.
+
+### Dataset Summary
+
+| Dataset | Source | Task | Classes | Size |
+|---------|--------|------|---------|------|
+| Waste Material Classification | Kaggle | Material Classification | 4 (Paper, Plastic, Organic, Other) | 11,522 images |
+| Recyclability | GitHub | Recyclability Classification | 2 (Recyclable, Non-Recyclable) | 34,459 images |
+| Liquid Detection | Self-constructed | Liquid Detection | 2 (Liquid, Non-Liquid) | 1,056 images |
+| Multi-Component Detection | Self-constructed | Component Detection | 2 (Single, Multi-Component) | Self-constructed |
+| Dawar External Validation | Industry Partner | Full Pipeline Validation | 5 (Output Compartments) | Varies |
+
+The mapping from raw categories to pipeline classes is as follows:
 
 | Raw Category | Pipeline Class |
-|---|---|
+| :--- | :--- |
 | Paper waste | Paper |
 | Plastic waste | Plastic |
 | Organic waste | Organic |
 | E-waste, automobile, battery, glass, light bulbs, metal | Other |
-
-External real-world validation data was provided by **Dawar**, an Egyptian waste management company.
-
----
-
 ## Results
 
 | Evaluation | Accuracy |
