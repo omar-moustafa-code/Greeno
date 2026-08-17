@@ -32,7 +32,7 @@ The pipeline processes each input image through four sequential stages, as illus
 </p>
 
 <p align="center">
-  <em>Figure 1. Sequential multi-stage SmartSort waste classification pipeline.</em>
+  <em>Figure 1. Sequential multi-stage Greeno waste classification pipeline.</em>
 </p>
 
 **Decision Codes:**
@@ -54,7 +54,7 @@ The pipeline processes each input image through four sequential stages, as illus
 The repository is organized into the following main directories and files:
 
 ```
-smartsort/
+greeno/
 │
 ├── images/
 │   ├── system_architecture.png                # Pipeline architecture diagram
@@ -238,7 +238,7 @@ The mapping from raw categories to pipeline classes is as follows:
 </p>
 
 <p align="center">
-  <em>Figure 2. Physical SmartSort prototype developed in collaboration with AUC's Eltoukhy Learning Factory and MakersGate.</em>
+  <em>Figure 2. Physical Greeno prototype developed in collaboration with AUC's Eltoukhy Learning Factory and MakersGate.</em>
 </p>
 
 Beyond the software pipeline, this project was extended into a **real-world smart bin prototype** funded by Nestlé and Dawar, and fabricated by AUC's **Eltoukhy Learning Factory** and **MakersGate**.
